@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>nodejs practice</title>
+    <script>
+        function button1_click() {
+            alert('alert버튼을 클릭하셨습니다!');
+        }
+    </script>
+</head>
+
+<body>
+    <p>유대혁</p>
+    <% if( type === 'calc'){ %>
+    <h2>계산 결과 : <%= result %> 입니다.</h2>
+    <% } else if ( type === 'item') { %>
+        <h2>item : <%= items %> 입니다.</h2>
+        <% if( itemNo !== '') { %>
+            <h2>itemNo : <%= itemNo %> 입니다.</h2>
+        <% } %>
+    <% } else { %>
+    <h2>user : <%= users %> 입니다.</h2>
+    <% } %>
+    <button id="button1" onclick="button1_click();">alert버튼</button>
+
+    <form action="/items" method="get">
+        <button type="submit">items url get요청</button>
+    </form>
+
+    <form action="/user" method="get">
+        <button type="submit">user url get요청</button>
+    </form>
+
+</body>
+
+</html>
