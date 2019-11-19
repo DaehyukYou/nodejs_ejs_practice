@@ -7,28 +7,42 @@
         function button1_click() {
             alert('alert버튼을 클릭하셨습니다!');
         }
+        var data = <%= data %>;
+        var itemInfo = '아이템 정보 : ' + data;
+        var userInfo = '유저 정보 : ' + data;
+
+        console.log(itemInfo);
+        console.log(userInfo);
+
+        if (<%= type %> === 'all') {
+            document.getElementById('#item').innerHTML(itemInfo);
+            document.getElementById('#user').innerHTML(userInfo);
+        } else if (<%= type %> === 'items') {
+            document.getElementById('#item').innerText(itemInfo);
+        } else if (<%= type %> === 'users'){
+            document.getElementById('#user').innerText(userInfo);
+        }
+
     </script>
 </head>
 
 <body>
     <p>유대혁</p>
-    <% if( type === 'calc'){ %>
-    <h2>계산 결과 : <%= result %> 입니다.</h2>
-    <% } else if ( type === 'item') { %>
-        <h2>item : <%= items %> 입니다.</h2>
-        <% if( itemNo !== '') { %>
-            <h2>itemNo : <%= itemNo %> 입니다.</h2>
-        <% } %>
-    <% } else { %>
-    <h2>user : <%= users %> 입니다.</h2>
-    <% } %>
+    <h2><span id = 'item'></span></h2>
+    <h2><span id = 'user'></span></h2>
+    
     <button id="button1" onclick="button1_click();">alert버튼</button>
-
+    <br>
+    <br>
+    <form action="/" method="get">
+        <button type="submit">/ url get요청</button>
+    </form>
+    <br>
     <form action="/items" method="get">
         <button type="submit">items url get요청</button>
     </form>
-
-    <form action="/user" method="get">
+    <br>
+    <form action="/users" method="get">
         <button type="submit">user url get요청</button>
     </form>
 

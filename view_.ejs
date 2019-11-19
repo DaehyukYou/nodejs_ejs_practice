@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>nodejs practice</title>
+    <script>
+        function button1_click() {
+            alert('alert버튼을 클릭하셨습니다!');
+        }
+    </script>
+</head>
+
+<body>
+    <p>유대혁</p>
+    <% if( type === 'all'){ %>
+        <h2>아이템 정보 : <%= data %> 입니다.</h2>
+        <h2>유저 정보 : <%= data %> 입니다.</h2>
+    <% } else if ( type === 'items') { %>
+        <h2>아이템 정보 : <%= data %> 입니다.</h2>
+        <% if( p !== '') { %>
+            <h2>아이템 번호 : <%= p %> 입니다.</h2>
+        <% } %>
+    <% } else if ( type === 'users') { %>
+        <h2>유저 정보 : <%= data %> 입니다.</h2>
+        <% if( p !== '') { %>
+            <h2>유저 번호 : <%= p %> 입니다.</h2>
+        <% } %>
+    <% } %>
+
+
+    <button id="button1" onclick="button1_click();">alert버튼</button>
+    <br>
+    <br>
+    <form action="/" method="get">
+        <button type="submit">/ url get요청</button>
+    </form>
+    <br>
+    <form action="/items" method="get">
+        <button type="submit">items url get요청</button>
+    </form>
+    <br>
+    <form action="/users" method="get">
+        <button type="submit">user url get요청</button>
+    </form>
+
+</body>
+
+</html>
