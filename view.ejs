@@ -7,29 +7,27 @@
         function button1_click() {
             alert('alert버튼을 클릭하셨습니다!');
         }
-        var data = <%= data %>;
-        var itemInfo = '아이템 정보 : ' + data;
-        var userInfo = '유저 정보 : ' + data;
-
-        console.log(itemInfo);
-        console.log(userInfo);
-
-        if (<%= type %> === 'all') {
-            document.getElementById('#item').innerHTML(itemInfo);
-            document.getElementById('#user').innerHTML(userInfo);
-        } else if (<%= type %> === 'items') {
-            document.getElementById('#item').innerText(itemInfo);
-        } else if (<%= type %> === 'users'){
-            document.getElementById('#user').innerText(userInfo);
-        }
-
+        window.onload = function () {
+            if ('<%= type %>' === 'all') {
+                let itemInfo = '아이템 정보 : ' + '<%= data[0] %>' + '입니다.';
+                let userInfo = '유저 정보 : ' + '<%= data[1] %>' + '입니다.';
+                document.getElementById("i").innerHTML = itemInfo;
+                document.getElementById("u").innerHTML = userInfo;
+            } else if ('<%= type %>' === 'items') {
+                let itemInfo = '아이템 정보 : ' + '<%= data %>' + '입니다.';
+                document.getElementById("i").innerHTML = itemInfo;
+            } else if ('<%= type %>' === 'users') {
+                let userInfo = '유저 정보 : ' + '<%= data %>' + '입니다.';
+                document.getElementById("u").innerHTML = userInfo;
+            }
+        };
     </script>
 </head>
 
 <body>
     <p>유대혁</p>
-    <h2><span id = 'item'></span></h2>
-    <h2><span id = 'user'></span></h2>
+    <h2 id = "i"></h2>
+    <h2 id = "u"></h2>
     
     <button id="button1" onclick="button1_click();">alert버튼</button>
     <br>
