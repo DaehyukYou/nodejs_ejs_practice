@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>nodejs practice</title>
+    <script>
+		let f1 = function() { document.getElementById('testImg').src='<%=data.item1 %>' }
+		let f2 = function() { document.getElementById('testImg').src='<%=data.item2 %>' }
+		let f3 = function() { document.getElementById('testImg').src='<%=data.item3 %>' }
+    </script>
+</head>
+
+<body>
+    <p>류태현</p>
+    <h2>Welcome To <%=title %></h2>
+
+	<a><img id='testImg' height='200' width='200' src ='' ></a>
+
+	<p></p>
+
+    <button id="button1" onclick="history.back();">이전 페이지 이동</button>
+	<button onclick="f1()">사진1</button>
+	<button onclick="f2()">사진2</button>
+	<button onclick="f3()">사진3</button>
+</body>
+
+</html>
